@@ -1,0 +1,153 @@
+body {
+    font-family: monospace, monospace;
+    text-align: center;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+ion-icon {
+  color: gray;
+  font-size: 1.6em;
+  size: 1.6em;
+  transition: font-size 0.3s ease;
+}
+
+ion-icon:hover {
+  font-size: 1.7em;
+  color: black;
+}
+
+.header{
+    margin-top: 20vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-end;
+}
+
+
+.header-info{
+    width: 80%;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-imagen  {
+    width: 20%;
+}
+
+.header-imagen img {
+    margin-top: 1vh;
+    width: 100px;
+    object-fit: cover;
+    border: 2px solid lightgray;
+    border-radius: 40%;
+}
+
+.header h1 {
+    font-size: 1.3em;
+    font-weight: normal;
+    margin : 0;
+    color: black;
+}
+
+.header h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin : 0;
+    color: grey;
+    padding-top: 1.5vh;
+}
+
+.skills ul li {
+    list-style-type: none;
+}
+
+
+.projects ul li {
+    list-style-type: none;
+}
+
+.nav {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: gray;
+    font-size: 1em;
+    margin: 0%;
+    margin-right: 2vw;
+}
+
+.about {
+    margin-top: 3vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.about h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin : 0;
+    color: black;
+}
+
+.about p {
+    font-size: 1em;
+    font-weight: normal;
+    margin : 0;
+    color: grey;
+    padding-top: 1.5vh;
+    text-align: justify;
+}
+
+
+.projects {
+    margin-top: 3vh;
+    margin-bottom: 15vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    padding: 0;
+}
+
+.project {
+    margin-top: 1.5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 1vh;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.skills {
+    margin-top: 3vh;
+    margin-bottom: 10vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
