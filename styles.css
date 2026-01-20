@@ -1,35 +1,93 @@
+/* Variables CSS para los temas */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --text-secondary: grey;
+    --border-color: lightgray;
+    --card-bg: white;
+    --card-shadow: rgb(0 0 0 / 25%);
+    --icon-color: gray;
+    --icon-hover: black;
+    --link-bg: yellow;
+    --link-color: black;
+    --link-hover-bg: black;
+    --link-hover-color: white;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --card-bg: #2a2a2a;
+    --card-shadow: rgb(0 0 0 / 50%);
+    --icon-color: #b0b0b0;
+    --icon-hover: #e0e0e0;
+    --link-bg: #ffd700;
+    --link-color: #1a1a1a;
+    --link-hover-bg: #e0e0e0;
+    --link-hover-color: #1a1a1a;
+}
+
 body {
     font-family: monospace, monospace;
     text-align: center;
-    background-color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botón para cambiar tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle ion-icon {
+    font-size: 1.5em;
 }
 
 ion-icon {
-  color: gray;
-  font-size: 1.6em;
-  size: 1.6em;
-  transition: font-size 0.3s ease;
+    color: var(--icon-color);
+    font-size: 1.6em;
+    size: 1.6em;
+    transition: all 0.3s ease;
 }
 
 ion-icon:hover {
-  font-size: 1.7em;
-  color: black;
+    font-size: 1.7em;
+    color: var(--icon-hover);
 }
 
-.header{
+.header {
     margin-top: 10vh;
     margin-left: 30vw;
     margin-right: 30vw;
     display: flex;
     flex-direction: row;
-
     align-items: flex-end;
 }
 
-
-.header-info{
+.header-info {
     width: 80%;
     justify-content: left;
     display: flex;
@@ -37,7 +95,7 @@ ion-icon:hover {
     align-items: flex-start;
 }
 
-.header-imagen  {
+.header-imagen {
     width: 20%;
 }
 
@@ -45,30 +103,29 @@ ion-icon:hover {
     margin-top: 1vh;
     width: 100px;
     object-fit: cover;
-    border: 2px solid lightgray;
+    border: 2px solid var(--border-color);
     border-radius: 40%;
+    transition: border-color 0.3s ease;
 }
 
 .header h1 {
     font-size: 1.3em;
     font-weight: normal;
-    margin : 0;
-    color: black;
+    margin: 0;
+    color: var(--text-color);
 }
 
 .header h2 {
     font-size: 1.1em;
     font-weight: normal;
-    margin : 0;
-    color: grey;
+    margin: 0;
+    color: var(--text-secondary);
     padding-top: 1.5vh;
 }
 
 .skills ul li {
     list-style-type: none;
 }
-
-
 
 .nav {
     margin-top: 3vh;
@@ -81,7 +138,7 @@ ion-icon:hover {
 
 .nav a {
     text-decoration: none;
-    color: gray;
+    color: var(--icon-color);
     font-size: 1em;
     margin: 0%;
     margin-right: 2vw;
@@ -99,20 +156,22 @@ ion-icon:hover {
 .about h2 {
     font-size: 1.1em;
     font-weight: bold;
-    margin : 0;
-    color: black;
+    margin: 0;
+    color: var(--text-color);
 }
 
 .about p {
     font-size: 1em;
     font-weight: normal;
-    margin : 0;
-    color: grey;
+    margin: 0;
+    color: var(--text-secondary);
     padding-top: 1.5vh;
     text-align: justify;
 }
 
-
+h3 {
+    color: var(--text-color);
+}
 
 .skills {
     margin-top: 3vh;
@@ -125,55 +184,69 @@ ion-icon:hover {
     justify-content: space-evenly;
 }
 
-
 .projects-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
 }
 
 .project-card {
-  background: white;          
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 25%);
-  transition: transform .2s;
-  max-width: 30%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 18px var(--card-shadow);
+    transition: transform .2s, background 0.3s ease, box-shadow 0.3s ease;
+    max-width: 30%;
 }
+
 .project-card:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
-/* Título y texto */
 .project-card h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: black;
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
+
 .project-card p {
-  margin: 0;
-  line-height: 1.4;
-  color: grey;
-  font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
-/* Enlace */
 .project-link {
-  display: inline-block;
-  margin-top: 1.1rem;
-  padding: 0.45rem 1rem;
-  border-radius: 8px;
-  background: yellow;         
-  color: black;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background .2s;
-}
-.project-link:hover {
-  background: black;
-  color: white;         
+    display: inline-block;
+    margin-top: 1.1rem;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    background: var(--link-bg);
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, color .2s;
 }
 
+.project-link:hover {
+    background: var(--link-hover-bg);
+    color: var(--link-hover-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .about, .skills {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .project-card {
+        max-width: 90%;
+    }
+}
